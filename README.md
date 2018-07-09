@@ -1,2 +1,2 @@
-# color-pallete
-Personal Color Pallet for application development
+## color-palette
+Personal color palette for application development.
