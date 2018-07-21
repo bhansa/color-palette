@@ -1,0 +1,95 @@
+.modalOverlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  animation: show .5s ease;
+}
+@keyframes show {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.modalContent {
+  position: relative;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+}
+.modalClose {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(40%, -40%);
+  display: flex;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0, 0.5);
+  cursor: pointer;
+}
+.modalHeader {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.inputBody {
+  margin-bottom: 16px;
+}
+.inputBody input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+.buttonContainer {
+  display: flex;
+}
+.buttonContainer button {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+.buttonContainer button:first-child {
+  margin-right: 6px; 
+}
+.buttonContainer button:last-child {
+  margin-left: 6px; 
+}
+.addButton {
+  background-color: royalblue;
+}
+.cancelButton {
+  background-color: salmon;
+}

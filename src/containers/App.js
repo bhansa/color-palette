@@ -16,16 +16,32 @@ class App extends Component {
       { id: 'A1342', value: '0000ff' },
     ]
   }
+  addColorHandler = (event) => {
+    let input = event.target.value;
+  }
+  deleteColorHandler = (index) => {
+    const colors = [...this.state.colors];
+    colors.splice(index, 1);
+    this.setState({
+      colors
+    });
+  }
+  toggleModalHandler = () => {
+    const showNewColorInput = !this.state.showNewColorInput;
+    this.setState({
+      showNewColorInput
+    });
+  }
   render() {
     let newColorInput = null;
     if(this.state.showNewColorInput) {
-      newColorInput = <NewColorInput />;
+      newColorInput = <NewColorInput toggleModal={this.toggleModalHandler} />;
     }
     return (
       <div className={classes.App}>
         <Cockpit />
         {newColorInput}
-        <Palette colors={this.state.colors} />
+        <Palette colors={this.state.colors} deleted={this.deleteColorHandler} toggleModal={this.toggleModalHandler} />
       </div>
     );
   }
