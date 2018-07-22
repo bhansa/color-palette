@@ -4,14 +4,13 @@ import commonClasses from '../Palette.css';
 // import classes from "./Color.css";
 
 const colorComponent = (props) => {
-  let colorCode = '#' + props.color;
   let bgStyle = {
-    backgroundColor: colorCode
+    backgroundColor: props.color
   };
   return (
     <div className={commonClasses.card} style={bgStyle}>
       <span onClick={props.deleted} className={commonClasses.delete} role="img" aria-label="delete icon">&#10060;</span>
-      <div className={commonClasses.cardLabel} contentEditable="true">{colorCode}</div>
+      <div className={commonClasses.cardLabel} contentEditable="true">{props.color}</div>
     </div>
   );
 }

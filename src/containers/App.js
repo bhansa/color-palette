@@ -9,11 +9,11 @@ class App extends Component {
   state = {
     showNewColorInput: false,
     colors: [
-      { id: 'A1234', value: '000000'},
-      { id: 'A1434', value: 'cccccc' },
-      { id: 'A1765', value: 'ff0000' },
-      { id: 'A1678', value: 'ffff00' },
-      { id: 'A1342', value: '0000ff' },
+      { id: 'A1234', value: '#000000'},
+      { id: 'A1434', value: '#cccccc' },
+      { id: 'A1765', value: '#ff0000' },
+      { id: 'A1678', value: '#ffff00' },
+      { id: 'A1342', value: '#0000ff' },
     ]
   }
   addColorHandler = (event) => {
