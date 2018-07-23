@@ -22,7 +22,6 @@ class App extends Component {
     let input = event.target.value;
     const colorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
     if(input.match(colorRegex)){
-      console.log('matches');
       this.setState({
         addButtonDisabled: false
     })
