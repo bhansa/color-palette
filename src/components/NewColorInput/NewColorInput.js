@@ -12,7 +12,7 @@ const newColorInput = (props) => {
           <input type="text" className={classes.inputField} placeholder="#cccccc" onKeyUp={props.validateColorCode} />
         </div>
         <div className={classes.buttonContainer}>
-          <button className={classes.addButton} disabled={props.addButtonDisabled}>Add</button>
+          <button className={classes.addButton} disabled={props.addButtonDisabled} onClick={props.addColorHandler}>Add</button>
           <button className={classes.cancelButton} onClick={props.toggleModal}>Cancel</button>
         </div>
       </div>

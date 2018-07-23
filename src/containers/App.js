@@ -9,6 +9,7 @@ class App extends Component {
   state = {
     showNewColorInput: false,
     addButtonDisabled: true,
+    input: '',
     colors: [
       { id: 'A1234', value: '#000000'},
       { id: 'A1434', value: '#cccccc' },
@@ -17,11 +18,12 @@ class App extends Component {
       { id: 'A1342', value: '#0000ff' },
     ]
   }
+
   // validating color code here
   validateColorCode = (event) => {
-    let input = event.target.value;
+    this.state.input = event.target.value;
     const colorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-    if(input.match(colorRegex)){
+    if(this.state.input.match(colorRegex)){
       this.setState({
         addButtonDisabled: false
     })
@@ -34,7 +36,15 @@ class App extends Component {
   }
 
   addColorHandler = (event) => {
-    let input = event.target.value;
+    const colors = [...this.state.colors];
+    colors.push({
+      'id': 'A212',
+      'value': this.state.input
+      });
+    this.setState({
+      colors,
+      showNewColorInput: false
+    })
   }
   deleteColorHandler = (index) => {
     const colors = [...this.state.colors];
@@ -52,7 +62,7 @@ class App extends Component {
   render() {
     let newColorInput = null;
     if(this.state.showNewColorInput) {
-      newColorInput = <NewColorInput addButtonDisabled={this.state.addButtonDisabled} validateColorCode={this.validateColorCode} toggleModal={this.toggleModalHandler} />;
+      newColorInput = <NewColorInput addColorHandler={this.addColorHandler} addButtonDisabled={this.state.addButtonDisabled} validateColorCode={this.validateColorCode} toggleModal={this.toggleModalHandler} />;
     }
     return (
       <div className={classes.App}>
