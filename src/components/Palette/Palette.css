@@ -1,12 +1,14 @@
 .palette {
   max-width: 1200px;
+  min-height: 768px;
+  height: 100%;
   margin: 0 auto;
 }
 .card {
   position: relative;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   /* border: 1px solid #ccc; */
   margin: 0 50px 50px 0;
   box-shadow: 1px 1px 1px 1px #ccc;

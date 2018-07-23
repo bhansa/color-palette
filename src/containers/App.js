@@ -26,6 +26,11 @@ class App extends Component {
         addButtonDisabled: false
     })
     }
+    else{
+      this.setState({
+        addButtonDisabled: true
+      })
+    }
   }
 
   addColorHandler = (event) => {
