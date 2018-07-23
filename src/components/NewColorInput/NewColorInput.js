@@ -9,10 +9,10 @@ const newColorInput = (props) => {
         <div className={classes.modalClose} onClick={props.toggleModal}>&#10005;</div>
         <div className={classes.modalHeader}>Add New Color</div>
         <div className={classes.inputBody}>
-          <input type="text" className={classes.inputField} placeholder="#cccccc" />
+          <input type="text" className={classes.inputField} placeholder="#cccccc" onKeyUp={props.validateColorCode} />
         </div>
         <div className={classes.buttonContainer}>
-          <button className={classes.addButton}>Add</button>
+          <button className={classes.addButton} disabled={props.addButtonDisabled}>Add</button>
           <button className={classes.cancelButton} onClick={props.toggleModal}>Cancel</button>
         </div>
       </div>

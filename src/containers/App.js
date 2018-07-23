@@ -8,6 +8,7 @@ import Palette from '../components/Palette/Palette';
 class App extends Component {
   state = {
     showNewColorInput: false,
+    addButtonDisabled: true,
     colors: [
       { id: 'A1234', value: '#000000'},
       { id: 'A1434', value: '#cccccc' },
@@ -16,6 +17,18 @@ class App extends Component {
       { id: 'A1342', value: '#0000ff' },
     ]
   }
+  // validating color code here
+  validateColorCode = (event) => {
+    let input = event.target.value;
+    const colorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    if(input.match(colorRegex)){
+      console.log('matches');
+      this.setState({
+        addButtonDisabled: false
+    })
+    }
+  }
+
   addColorHandler = (event) => {
     let input = event.target.value;
   }
@@ -35,7 +48,7 @@ class App extends Component {
   render() {
     let newColorInput = null;
     if(this.state.showNewColorInput) {
-      newColorInput = <NewColorInput toggleModal={this.toggleModalHandler} />;
+      newColorInput = <NewColorInput addButtonDisabled={this.state.addButtonDisabled} validateColorCode={this.validateColorCode} toggleModal={this.toggleModalHandler} />;
     }
     return (
       <div className={classes.App}>
