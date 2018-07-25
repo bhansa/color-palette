@@ -11,8 +11,6 @@ app.use(bodyParser.json());
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
-process.env.MONGODB_URI = "mongodb://bhansa:bhansa293@ds245971.mlab.com:45971/color-palette";
-
 // Connect to the database before starting the application server.
 mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test", function (err, client) {
   if (err) {
@@ -36,15 +34,6 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:2701
     console.log("ERROR: " + reason);
     res.status(code || 500).json({"error": message});
   }
-
-  app.get('/bhansa', function(req, res){
-    console.log('hey bhansa');
-  })
-
-  app.use("/demo", (req, res) => {
-    res.sendFile(__dirname + "/demo.html");
-  });
-
 
   // COLORS API ROUTES BELOW 
 
