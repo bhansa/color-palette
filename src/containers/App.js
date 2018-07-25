@@ -13,7 +13,7 @@ class App extends Component {
       { value: '#cccccc' },
       { value: '#ff0000' },
       { value: '#ffff00' },
-      { value: '#0000ff' },
+      { value: '#0000ff' }
     ],
     copyIndex: -1,
     colorInput: '',
@@ -33,7 +33,7 @@ class App extends Component {
       // Adding check for duplicate color for 3 digit hexcode
       if(input.length === 4) {
         let numerical = input.split('#')[1];
-        input = `#${numerical}${numerical}`;
+        input = numerical.split('').reduce((hexcode, n) => hexcode + n + n, '#');
       }
       if(this.state.colors.length && this.state.colors.find(color => color.value === input)) {
         this.toggleInputValid('', 'Color already exists!');
