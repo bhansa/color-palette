@@ -53,7 +53,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:2701
     })
   });
 
-  app.post('/api/colors', function(res, req){
+  app.post('/api/colors', function(req, res){
     console.log(req.body);
     if(!req.body.color_id || !req.body.color_value){
       handleError(res, "Invalid user input, Must provide both id and color value", 400);
