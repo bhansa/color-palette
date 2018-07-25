@@ -1,0 +1,20 @@
+.copyMessageContainer {
+  position: absolute;
+  padding: 10px 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(0, -50%);
+  background: rgba(255, 255, 255, 0.5);
+}
+.copyMessage {
+  position: relative;
+}
+.copyMessageText {
+  font-size: 14px;
+}
+.copyMessageIcon {
+  color: green;
+  font-size: 20px;
+  line-height: 20px;
+}

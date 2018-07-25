@@ -53,13 +53,15 @@
 }
 .modalHeader {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   font-size: 16px;
+  line-height: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 .inputBody {
-  margin-bottom: 16px;
+  position: relative;
+  margin-bottom: 22px;
 }
 .inputBody input {
   box-sizing: border-box;
@@ -67,6 +69,14 @@
   height: 30px;
   padding-left: 10px;
   font-size: 14px;
+}
+.validationMessage {
+  position: absolute;
+  font-size: 12px;
+  left: 0;
+  top: 30px;
+  margin: 4px 0 0 6px;
+  color: orangered;
 }
 .buttonContainer {
   display: flex;
@@ -82,13 +92,16 @@
   cursor: pointer;
 }
 .buttonContainer button:first-child {
-  margin-right: 6px; 
+  margin-right: 6px;
 }
 .buttonContainer button:last-child {
-  margin-left: 6px; 
+  margin-left: 6px;
 }
 .addButton {
   background-color: royalblue;
+}
+.addButton[disabled] {
+  background-color: rgba(65, 105, 225, 0.5);
 }
 .cancelButton {
   background-color: salmon;
